@@ -9,47 +9,91 @@
         background-color: rgb(0, 0, 0);
       }
       .container {
-        width: 600px;
-        height: 450px;
+        width: 500px;
+        height: 400px;
         margin: 30px auto;
         border-radius: 30px;
         background-color: white;
       }
-    .lamp-infocontainer{
+      .lamp-infocontainer {
         display: flex;
         flex-direction: row;
-    }
-
-      
-      .lamp{
-        height:200px ;
+      }
+      .lamp {
+        height: 190px;
         margin-left: 30px;
         margin-top: 40px;
-        
       }
-      .info{
-     margin:70px 20px;
-     padding: 3px;
-     font-size: 25px;
-     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-     font-weight: 700;
+      .info {
+        margin: 70px 20px;
+        padding: 3px;
+        font-size: 20px;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        font-weight: 700;
+      }
+      .quantity-btn-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 10px auto;
+      }
+      .btn {
+        width: 90px;
+        height: 40px;
+        font-size: 25px;
+        background-color: black;
+        color: white;
+        border: 2px solid white;
+        border-radius: 2px;
+        box-shadow: 1px 2px 5px 2px rgb(172, 170, 170);
+      }
+      .quantity {
+        width: 150px;
+        height: 30px;
+        font-size: 20px;
+        color: black;
+        background-color: white;
+        border: 3px solid white;
+        border-radius: 2px;
+        text-align: center;
+        padding-top:3px;
+        box-shadow: 1px 2px 5px 2px rgb(172, 170, 170);
+      }
+      .buy-btn {
+        width: 445px;
+        height:32px ;
+        margin: 15px 28px;
+        background-color: black;
+        border: 2px solid white;
+        border-radius: 2px;
+        box-shadow: 2px 2px grey;
+      }
+      .buy-link{
+        text-decoration: none;
+        color: white;
+        text-align: center;
+        padding-top:2px;
+        font-family: fantasy;
+        font-size: 20px;
       }
     </style>
   </head>
   <body>
     <h1>Product Quantity Counter</h1>
     <div class="container">
-        <div class="lamp-infocontainer">
-      <img src="lamp.png" class="lamp" />
-      <p class="info">
-        Product Name: Antique Home Decor Wall Lamp<br /><br/>Price:Rs.749
-      </p></div>
+      <div class="lamp-infocontainer">
+        <img src="lamp.png" class="lamp" />
+        <p class="info">
+          Product Name: Antique Home Decor Wall Lamp<br /><br />Price:Rs.749
+        </p>
+      </div>
       <div class="quantity-btn-container">
         <button onclick="decrement()" class="btn">-</button>
-        <span id="quantity">1</span>
+        <div id="quantity" class="quantity">1</div>
         <button onclick="increment()" class="btn">+</button>
       </div>
-      <button class="buy-btn"><a href="">Buy Now</a></button>
+      <button class="buy-btn"><a href="" class="buy-link">Buy Now</a></button>
     </div>
     <script>
       const quantityElement = document.getElementById("quantity");
