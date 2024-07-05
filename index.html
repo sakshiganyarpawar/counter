@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Quantity Counter</title>
+    <style>
+
+    </style>
 </head>
 <body>
     <h1>Product Quantity Counter</h1>
@@ -17,5 +20,15 @@
     </div>
 <button class="buy-btn"><a href="">Buy Now</a></button>
 </div>
+<script>
+    const quantityElement=document.getElementById("quantity");
+    let quantity=parseInt(quantityElement.innerText);
+    function increment(){
+        quantityElement.innerText=++quantity;
+    }
+    function decrement(){
+        quantityElement.innerText=--quantity;
+    }
+</script>
 </body>
 </html>
