@@ -58,13 +58,13 @@
         border: 3px solid white;
         border-radius: 2px;
         text-align: center;
-        padding-top:3px;
+        padding-top: 3px;
         box-shadow: 1px 2px 5px 2px rgb(172, 170, 170);
         cursor: pointer;
       }
       .buy-btn {
         width: 445px;
-        height:32px ;
+        height: 32px;
         margin: 15px 28px;
         background-color: black;
         border: 2px solid white;
@@ -72,11 +72,11 @@
         box-shadow: 2px 2px grey;
         cursor: pointer;
       }
-      .buy-link{
+      .buy-link {
         text-decoration: none;
         color: white;
         text-align: center;
-        padding-top:2px;
+        padding-top: 2px;
         font-family: fantasy;
         font-size: 20px;
       }
@@ -92,20 +92,23 @@
         </p>
       </div>
       <div class="quantity-btn-container">
-        <button onclick="decrement()" class="btn">-</button>
+        <button onclick="ChangeQuantity('dec')" class="btn">-</button>
         <div id="quantity" class="quantity">1</div>
-        <button onclick="increment()" class="btn">+</button>
+        <button onclick="ChangeQuantity('inc')" class="btn">+</button>
       </div>
-      <button class="buy-btn"><a href="https://amzn.in/d/09ga6aPq" class="buy-link">Buy Now</a></button>
+      <button class="buy-btn">
+        <a href="https://amzn.in/d/09ga6aPq" class="buy-link">Buy Now</a>
+      </button>
     </div>
     <script>
       const quantityElement = document.getElementById("quantity");
       let quantity = parseInt(quantityElement.innerText);
-      function increment() {
-        quantityElement.innerText = ++quantity;
-      }
-      function decrement() {
-        quantityElement.innerText = --quantity;
+      function ChangeQuantity(op) {
+        if (quantity == 1 && op == "dec") 
+        return;
+        if (quantity == 5 && op == "inc") 
+        return;
+        quantityElement.innerText = op === "inc" ? ++quantity : --quantity;
       }
     </script>
   </body>
